@@ -1,0 +1,23 @@
+<h2>Характеристика выбранного авто:</h2>
+<div class="car">
+  <div class="car__row">
+    <div class="car__item">Марка</div>
+    <div class="car__value">{{name}}</div>
+  </div>
+  <div class="car__row">
+    <div class="car__item">Цвет</div>
+    <div class="car__value color"
+      [ngStyle]="{background: color}"
+    ></div>
+  </div>
+  <div class="car__row">
+    <button class="btn btn-back"
+      (click)="locationBack()">
+      <i class="fas fa-long-arrow-alt-left"></i>
+      <span>Back</span>
+    </button>
+  </div>
+</div>
+<hr>
+<a (click)="mazdaOpen()">Mazda</a>
+

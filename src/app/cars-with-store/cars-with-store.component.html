@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="cars-store">
+
+    <app-cars-form-store></app-cars-form-store>
+    <!--
+      так как используем редакс, то наши View не будут связаны с датой
+      (addCar)="onAdd($event)"
+    -->
+
+
+    <div class="list-group">
+      <app-car-store
+        [car]="c"
+        *ngFor="let c of (carState | async).cars"
+      >
+        <!--(deleteCar)="onDelete($event)"-->
+      </app-car-store>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+.car {
+  max-width: 450px;
+  &__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+  &__value {
+    &.color {
+      width: 25px;
+      height: 25px;
+    }
+  }
+}

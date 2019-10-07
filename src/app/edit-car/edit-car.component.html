@@ -1,0 +1,21 @@
+<div class="edit-car">
+  <label class="edit-car__row">
+    <input type="text" placeholder="enter your name" class="edit-car__input edit-car__input_name"
+           [(ngModel)]="carSelected.name">
+  </label>
+  <label class="edit-car__row">
+    <input type="text" placeholder="enter your color" class="edit-car__input edit-car__input_color"
+           [(ngModel)]="carSelected.color">
+  </label>
+  <label class="edit-car__row">
+    <input type="text" placeholder="enter your image" class="edit-car__input edit-car__input_image"
+           [(ngModel)]="carSelected.image">
+  </label>
+  <label class="edit-car__row">
+    <input type="text" placeholder="enter your price" class="edit-car__input edit-car__input_price"
+           [(ngModel)]="carSelected.price">
+  </label>
+
+  <input type="submit" class="btn btn-save edit-car__submit" value="Save" (click)="updateCar()">
+  <input type="submit" class="btn btn-cancel edit-car__submit" value="Close" (click)="closeCarCard()">
+</div>

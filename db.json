@@ -1,0 +1,28 @@
+{
+  "title": [
+    {
+      "value": "CRUD CARS LIST"
+    }
+  ],
+  "cars": [
+    {
+      "name": "BMW",
+      "model": "yellow",
+      "date": "25.07.19",
+      "id": 6,
+      "isSold": true
+    },
+    {
+      "name": "Audi",
+      "model": "red",
+      "date": "07.10.19",
+      "id": 7
+    },
+    {
+      "name": "Mercedez",
+      "model": "purple",
+      "date": "07.10.19",
+      "id": 8
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+<div class="cars-wrapper">
+  <h2>{{currentTitle}}</h2>
+  <div class="cars">
+    <label class="cars__item">
+      <span>Name:</span>
+      <input type="text" class="form-control"
+             [(ngModel)]="carName">
+    </label>
+    <label class="cars__item">
+      <span>Color:</span>
+      <input type="text" class="form-control"
+             [(ngModel)]="carColor">
+    </label>
+    <label class="cars__item">
+      <span>Image:</span>
+      <input type="text" class="form-control"
+             [(ngModel)]="carImage">
+    </label>
+    <label class="cars__item">
+      <span>Price:</span>
+      <input type="text" class="form-control"
+             [(ngModel)]="carPrice">
+    </label>
+
+    <button class="btn car-add"
+            (click)="addCar();"
+    >Add</button>
+    <ul class="cars-list">
+      <li class="cars-list__item"
+          *ngFor="let car of cars; let idx = index">
+        <div class="car">
+          <a
+            class="car__name"
+            [routerLink]="['/cars', car.id, car.name]"
+            [queryParams]="{color: car.color || 'black'}"
+            fragment="picture"
+            [ngStyle]="{borderLeft: '4px solid ' + car.color}"
+          >{{idx+1}}. {{car.name}}</a>
+          <div class="car-price">{{car.price}}</div>
+          <div class="car-actions">
+            <span class="car__icon car__icon_edit" (click)="editCar(car)">
+              <i class="far fa-edit"></i>
+            </span>
+            <span class="car__icon car__icon_delete" (click)="deleteCar(car)">
+              <i class="fas fa-trash-alt"></i>
+            </span>
+          </div>
+          <div class="car-image"><img src="{{car.image || '../assets/images/1.jpg'}}" alt="image"></div>
+          <button class="buy-car"
+                  (click)="buyCar()"
+                  [ngClass]="{'sold-car': isSold}">
+            <i class="fas fa-money-bill"></i>
+            <span>Buy car</span>
+          </button>
+        </div>
+      </li>
+    </ul>
+    <div class="cars-change">
+      <app-edit-car
+        *ngIf="modalFlag"
+        [carSelected]="carSelected"
+        (carChange)="newUpdateCar($event)"
+        (modalClose)="cancelUpdateCar($event)"></app-edit-car>
+    </div>
+
+    <app-action-status
+      *ngIf="actionStatusMessage"
+      [statusMessage]="statusMessage"
+      (closeAlert)="closeAlertStatus($event)"></app-action-status>
+
+  </div>
+</div>

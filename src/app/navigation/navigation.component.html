@@ -1,0 +1,14 @@
+<nav
+  [@carsAnimationTrigger]="carsAnimationTriggerState">
+  <ul class="main-nav">
+    <li
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{exact: true}"
+    ><a routerLink="/">main</a></li>
+    <li routerLinkActive="active"><a routerLink="/cars">cars</a></li>
+    <li routerLinkActive="active"><a routerLink="/about">redux</a></li>
+  </ul>
+</nav>
+<!--<div class="animation"-->
+     <!--(click)="multiState = multiState === 'start' ? 'end' : 'start'"-->
+     <!--[@multi]="multiState"></div>-->
